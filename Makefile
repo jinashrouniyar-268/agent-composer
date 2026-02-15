@@ -1,0 +1,42 @@
+BINARY_NAME=agent
+BUILD_DIR=bin
+CMD_DIR=cmd/agent-composer
+
+.PHONY: build run clean format lint test install deps help
+
+build:
+	go build -o $(BUILD_DIR)/$(BINARY_NAME) ./$(CMD_DIR)
+
+run: build
+	$(BUILD_DIR)/$(BINARY_NAME)
+
+clean:
+	rm -rf $(BUILD_DIR)
+	go clean
+
+format:
+	go fmt ./...
+
+lint:
+	go vet ./...
+
+test:
+	go test ./...
+
+install: build
+	cp $(BUILD_DIR)/$(BINARY_NAME) $(GOPATH)/bin/$(BINARY_NAME)
+
+deps:
+	go mod tidy
+	go mod download
+
+help:
+	@echo "Available commands:"
+	@echo "  make build    - Build the binary"
+	@echo "  make run      - Build and run"
+	@echo "  make clean    - Remove build artifacts"
+	@echo "  make format   - Format code"
+	@echo "  make lint     - Run go vet"
+	@echo "  make test     - Run tests"
+	@echo "  make install  - Install binary to GOPATH/bin"
+	@echo "  make deps     - Tidy and download dependencies"
