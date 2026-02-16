@@ -4,7 +4,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const version = "0.0.1"
+// version is set at build time via ldflags (e.g. -X .../cli.version=0.1.2); default for dev builds.
+var version = "0.0.1"
 
 var (
 	flagList          bool
