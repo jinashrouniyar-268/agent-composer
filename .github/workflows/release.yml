@@ -39,7 +39,7 @@ jobs:
       - name: Checkout homebrew-agent-composer
         uses: actions/checkout@v6
         with:
-          repository: YOUR_ORG/homebrew-agent-composer
+          repository: jinashrouniyar-268/homebrew-agent-composer
           token: ${{ secrets.HOMEBREW_TOKEN }}
           path: homebrew-agent-composer
 

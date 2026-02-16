@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/YOUR_ORG/agent-composer/internal/cli"
+	"github.com/jinashrouniyar-268/agent-composer/internal/cli"
 )
 
 func main() {

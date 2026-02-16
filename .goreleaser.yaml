@@ -65,7 +65,7 @@ changelog:
 
 release:
   github:
-    owner: YOUR_ORG
+    owner: jinashrouniyar-268
     name: agent-composer
   draft: false
   prerelease: auto

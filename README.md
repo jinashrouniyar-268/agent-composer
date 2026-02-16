@@ -7,19 +7,19 @@ Create research agents directly from your terminal using the [Contextual AI](htt
 ### Homebrew (Recommended)
 
 ```bash
-brew install YOUR_ORG/agent-composer/agent
+brew install jinashrouniyar-268/agent-composer/agent
 ```
 
 Or tap first:
 
 ```bash
-brew tap YOUR_ORG/agent-composer
+brew tap jinashrouniyar-268/agent-composer
 brew install agent
 ```
 
 ### Manual Download
 
-Download the appropriate archive from the [Releases](https://github.com/YOUR_ORG/agent-composer/releases) page.
+Download the appropriate archive from the [Releases](https://github.com/jinashrouniyar-268/agent-composer/releases) page.
 
 #### macOS Gatekeeper Warning
 
@@ -37,6 +37,21 @@ xattr -d com.apple.quarantine ./agent
 Or right-click the binary, select "Open", and click "Open" in the dialog.
 
 **Note:** Installing via Homebrew avoids this issue automatically.
+
+## Uninstall
+
+- **Remove the binary (Homebrew):**  
+  `brew uninstall agent`  
+  This only removes the `agent` binary. It does not touch config or data.
+
+- **Remove config and data (optional):**  
+  The CLI stores credentials, agent registry, and per-agent YAML in `~/.config/agent-composer/`. That directory is created the first time you run a command that writes config (e.g. `agent init`). To remove it and all stored data:
+
+  ```bash
+  rm -rf ~/.config/agent-composer
+  ```
+
+  Use this if you want a full cleanup (e.g. before uninstalling or to reset API keys and agents).
 
 ## Commands
 
@@ -63,7 +78,7 @@ Releases are automated via [GoReleaser](https://goreleaser.com/) and GitHub Acti
    - Build binaries for all platforms (macOS, Linux, Windows)
    - Create a GitHub release with the binaries
    - Generate checksums and changelog
-   - Update the Homebrew formula in [homebrew-agent-composer](https://github.com/YOUR_ORG/homebrew-agent-composer) (if `HOMEBREW_TOKEN` is set)
+   - Update the Homebrew formula in [homebrew-agent-composer](https://github.com/jinashrouniyar-268/homebrew-agent-composer) (if `HOMEBREW_TOKEN` is set)
 
 4. **To update the Homebrew formula manually** (if not using CI):
    ```bash
