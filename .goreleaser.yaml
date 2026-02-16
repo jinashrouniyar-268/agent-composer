@@ -1,4 +1,3 @@
-# GoReleaser configuration for agent-composer
 version: 2
 
 project_name: agent
